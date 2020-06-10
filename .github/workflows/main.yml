@@ -86,6 +86,8 @@ jobs:
       run: rustup update stable --no-self-update && rustup default stable
       shell: bash
     - run: rustup target add x86_64-unknown-linux-gnu
+    - run: ls
+    - run: ls ..
     - run: cargo build
 
   msrv:
