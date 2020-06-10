@@ -88,6 +88,11 @@ jobs:
       shell: bash
     - run: rustup target add x86_64-unknown-linux-gnu
     - run: cargo build
+    - run: cargo test
+    - run: cargo test --features parallel
+    - run: cargo test --manifest-path cc-test/Cargo.toml --target x86_64-unknown-linux-gnu
+    - run: cargo test --manifest-path cc-test/Cargo.toml --target x86_64-unknown-linux-gnu --features parallel
+    - run: cargo test --manifest-path cc-test/Cargo.toml --target x86_64-unknown-linux-gnu --release
 
   msrv:
     name: MSRV
