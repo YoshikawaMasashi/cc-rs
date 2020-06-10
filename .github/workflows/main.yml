@@ -92,7 +92,15 @@ jobs:
     - name: ls2
       run: ls ..
       shell: bash
-    - run: cargo build
+    - name: cdsrc
+      run: cd src
+      shell: bash
+    - name: cd
+      run: cd cc-rs
+      shell: bash
+    - name: build
+      run: cargo build
+      shell: bash
 
   msrv:
     name: MSRV
