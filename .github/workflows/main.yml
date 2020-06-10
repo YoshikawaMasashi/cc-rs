@@ -81,8 +81,8 @@ jobs:
     name: CUDA Test
     runs-on: ubuntu-latest
     steps:
-    - uses: docker://nvidia/cuda
     - uses: actions/checkout@master
+    - uses: docker://nvidia/cuda
     - name: Install Rust (rustup)
       run: rustup update stable --no-self-update && rustup default stable
       shell: bash
