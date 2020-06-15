@@ -7,5 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - uses: docker://nvidia/cuda
+    # - uses: docker://nvidia/cuda
+    # from https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1604&target_type=debnetwork
+    - run: dpkg -i cuda-repo-ubuntu1604_9.0.176-1_amd64.deb
+    - run: apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/7fa2af80.pub
+    - run: apt-get update`
+    - run: apt-get install cuda
     - run: nvcc
+    
