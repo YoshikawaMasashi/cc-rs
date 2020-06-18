@@ -12,12 +12,11 @@ jobs:
     - run: apt-get update && apt-get install -y curl
     - name: Install rustup
       run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-    - run: echo "source $HOME/.cargo/env" >> $HOME/.bashrc
     - name: source rustup
       run: source $HOME/.cargo/env
       shell: bash
     - name: Install Rust (rustup)
-      run: rustup update stable --no-self-update && rustup default stable
+      run: source $HOME/.cargo/env && rustup update stable --no-self-update && rustup default stable
       shell: bash
     - run: rustup target add x86_64-unknown-linux-gnu
     - name: Install g++-multilib
