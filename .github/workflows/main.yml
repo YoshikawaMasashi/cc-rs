@@ -12,6 +12,7 @@ jobs:
     - run: apt-get update && apt-get install -y curl
     - name: Install rustup
       run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    - run: source $HOME/.cargo/env
     - name: Install Rust (rustup)
       run: rustup update stable --no-self-update && rustup default stable
       shell: bash
