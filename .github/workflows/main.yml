@@ -5,15 +5,8 @@ jobs:
   cuda_test:
     name: CUDA Test
     runs-on: ubuntu-latest
+    container: nvidia/cuda:10.2-cudnn7-devel-ubuntu18.04
     steps:
     - uses: actions/checkout@master
-    # - uses: docker://nvidia/cuda
-    # https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1804&target_type=debnetwork
-    - run: wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
-    - run: sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
-    - run: sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
-    - run: sudo add-apt-repository "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/ /"
-    - run: sudo apt-get update
-    - run: sudo apt-get -y install cuda
     - run: nvcc
     
