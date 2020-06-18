@@ -30,13 +30,7 @@ jobs:
       if: matrix.build == 'linux32'
     - name: cargo build
       run: source $HOME/.cargo/env && cargo build
+      shell: bash
     - name: cargo test 
-      run: source $HOME/.cargo/env && cargo test 
-    - name: cargo test --features parallel
-      run: source $HOME/.cargo/env && cargo test --features parallel
-    - name: cargo test --manifest-path cc-test/Cargo.toml --target x86_64-unknown-linux-gnu
-      run: source $HOME/.cargo/env && cargo test --manifest-path cc-test/Cargo.toml --target x86_64-unknown-linux-gnu
-    - name: cargo test --manifest-path cc-test/Cargo.toml --target x86_64-unknown-linux-gnu --features parallel
-      run: source $HOME/.cargo/env && cargo test --manifest-path cc-test/Cargo.toml --target x86_64-unknown-linux-gnu --features parallel
-    - name: cargo test --manifest-path cc-test/Cargo.toml --target x86_64-unknown-linux-gnu --release
-      run: source $HOME/.cargo/env && cargo test --manifest-path cc-test/Cargo.toml --target x86_64-unknown-linux-gnu --release
+      run: source $HOME/.cargo/env && cargo test
+      shell: bash 
