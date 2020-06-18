@@ -12,6 +12,7 @@ jobs:
     - run: apt-get update && apt-get install -y curl
     - name: Install rustup
       run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    - run: echo "source $HOME/.cargo/env" >> /home/jxtg/.bashrc
     - name: source rustup
       run: source $HOME/.cargo/env
       shell: bash
