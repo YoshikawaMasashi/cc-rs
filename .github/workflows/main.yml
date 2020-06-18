@@ -97,6 +97,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - run: nvcc --version # cuda install check
+    - run: apt-get install -y curl
     - name: Install rustup
       run: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     - name: Install Rust (rustup)
